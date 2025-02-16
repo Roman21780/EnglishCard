@@ -1,0 +1,42 @@
+[MASTER]
+# Параметры настройки Pylint
+ignore=venv
+load-plugins=pylint.extensions.docparams
+
+[FORMAT]
+# Стиль кода
+indent-string='    '  # 4 пробела
+max-line-length=79  # Максимальная длина строки
+docstring-min-length=10  # Минимальная длина докстрингов
+# Максимальная длина строки для документации
+max-docstring-length=72
+
+[MESSAGES CONTROL]
+# Отключить предупреждения о недостающих докстрингах
+disable=C0111  # Missing docstring
+# Отключить предупреждения о неиспользуемых переменных
+disable=W0612  # Unused variable
+# Отключить предупреждения о неиспользуемых импортированных модулях
+disable=W0401  # Wildcard import
+
+[DESIGN]
+# Максимальное количество аргументов в функции
+max-args=5
+# Максимальная глубина вложенности
+max-nested-blocks=5
+
+[TYPECHECK]
+# Проверка типов
+ignored-modules=typing
+
+[VARIABLES]
+# Правила именования
+variable-rgx=[a-z_][a-z0-9_]{0,30}$  # Имена переменных в нижнем регистре с подчеркиванием
+class-rgx=[A-Z_][a-zA-Z0-9_]{0,30}$  # Имена классов в стиле CamelCase
+const-rgx=[A-Z_][A-Z0-9_]{0,30}$  # Имена констант в верхнем регистре с подчеркиванием
+
+[IMPORTS]
+# Порядок импортирования
+# Стандартные библиотеки
+# Сторонние библиотеки
+# Ваши собственные модули
